@@ -37,20 +37,20 @@ This takes the [wyoming-faster-whisper](https://github.com/rhasspy/wyoming-faste
     ```yaml
     name: wyoming
     services:
-    faster-whisper-cuda:
-      container_name: faster-whisper-cuda
-      build: .
-      command: "--model large --language de --debug"
-      volumes:
-        - ./data:/data
-      ports:
-        - 10300:10300/tcp
-      devices:
-        - /dev/nvidia-uvm:/dev/nvidia-uvm
-        - /dev/nvidia-uvm-tools:/dev/nvidia-uvm-tools
-        - /dev/nvidia0:/dev/nvidia0
-        - /dev/nvidiactl:/dev/nvidiactl
-      restart: always
+      faster-whisper-cuda:
+        container_name: faster-whisper-cuda
+        build: .
+        command: "--model large --language de --debug"
+        volumes:
+          - ./data:/data
+        ports:
+          - 10300:10300/tcp
+        devices:
+          - /dev/nvidia-uvm:/dev/nvidia-uvm
+          - /dev/nvidia-uvm-tools:/dev/nvidia-uvm-tools
+          - /dev/nvidia0:/dev/nvidia0
+          - /dev/nvidiactl:/dev/nvidiactl
+        restart: always
     ```
 
 3. start service
